@@ -1,6 +1,6 @@
 import pokeReducer from './type-reducer';
 
-describe.only('Reducers.type-reducer', () => {
+describe('Reducers.type-reducer', () => {
   it('should return a defualt state', () => {
     const actual = pokeReducer(undefined, {});
     expect(actual).toEqual([]);
