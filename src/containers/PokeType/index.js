@@ -13,10 +13,7 @@ class PokeTypes extends Component {
   render() {
     return (
       <div>
-        <button onClick={()=> {
-          this.props.addPokeTypes();
-          alert('FAKE')
-        }}> PokeTypes </button>
+        <button onClick={()=> { this.props.addPokeTypes(); } }> PokeTypes </button>
       </div>
     );
   }
