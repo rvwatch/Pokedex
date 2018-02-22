@@ -8,6 +8,8 @@ class PokeTypes extends Component {
 
   componentDidMount = async () => {
     const types = await getPokemon();
+    console.log(types);
+    
     this.props.addPokeTypes(types);
   }
 
