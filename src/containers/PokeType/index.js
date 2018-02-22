@@ -3,6 +3,7 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import { connect } from 'react-redux';
 import { addPokeTypes } from '../../actions';
 import { getPokemon } from '../../apiCalls/apiCall';
+import PokeCards from '../../components/PokeCards/PokeCards';
 class PokeTypes extends Component {
 
   componentDidMount = async () => {
@@ -11,18 +12,25 @@ class PokeTypes extends Component {
   }
 
   render() {
+    
     const { pokeType } = this.props;
+    const pokeCards = pokeType.map((type, index) => {
+      return <PokeCards {...type} key={index} />;
+      
+    });
+    
+    
     if (!pokeType.length){
       return (
         <div>
-          <h1>loading... <img src="../../../loading.gif" alt="Loading" width="128" height="128" /></h1>
+          <div className='loading'></div>
         </div>
       );
     }
     return (
-      <div>
-        
-      </div>
+      <section className='card-wrap'>
+        { pokeCards }
+      </section>
     );
   }
 }

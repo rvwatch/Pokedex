@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './PokeCards.css';
-import PokeType from '../../containers/PokeType'
 
 class PokeCards extends Component {
 
   render() {
+      const { name } = this.props;
+      
     return (
       <div className='poke-card'>
-        <h1>This is a card</h1>
+        <h1>{ name }</h1>
       </div>
     );
   }
