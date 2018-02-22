@@ -6,7 +6,7 @@ export const getPokemon = async () => {
 
     const results = await data.json();
     return results;
-  } catch (errs) {
-    throw new Error('error');
+  } catch (getPokemonError) {
+    return 'OMFG, you broke it!';
   }
 };

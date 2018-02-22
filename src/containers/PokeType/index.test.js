@@ -1,12 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PokeTypes, mapStateToProps, mapDispatchToProps} from './index';
-import { fakeStore } from '../../tests/fakeStore';
+import PokeTypes from './index';
 
 
-describe('PokeTypes component', () => {
+describe('PokeTypes container', () => {
+  const mockStore = {
+    default: () => {},
+    dispatch: () => {}
+  };
+
   it('should render correctly', () => {
-    const wrapper = shallow(<PokeTypes store={fakeStore} />);
+    const wrapper = shallow(<index  />);
     expect(wrapper).toMatchSnapshot();
   });
+
 });
