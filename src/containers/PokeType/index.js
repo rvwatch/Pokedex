@@ -11,9 +11,17 @@ class PokeTypes extends Component {
   }
 
   render() {
+    const { pokeType } = this.props;
+    if (!pokeType.length){
+      return (
+        <div>
+          <h1>loading... <img src="../../../loading.gif" alt="Loading" width="128" height="128" /></h1>
+        </div>
+      );
+    }
     return (
       <div>
-        <button onClick={()=> { this.props.addPokeTypes(); } }> PokeTypes </button>
+        
       </div>
     );
   }
@@ -24,7 +32,7 @@ PokeTypes.propTypes = {
   addPokeTypes: func.isRequired
 };
 
-export const mapStateToProps = ({ pokeTypes }) => ({ pokeTypes });
+export const mapStateToProps = ({ pokeType }) => ({ pokeType });
 export const mapDispatchToProps = dispatch => ({ 
   addPokeTypes: types => dispatch(addPokeTypes(types))
 });
