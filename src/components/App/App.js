@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import FakeContainer from '../../containers/FakeContainer/'
+import { getPokemon } from '../../apiCalls/apiCall';
+import FakeContainer from '../../containers/FakeContainer/';
 
 class App extends Component {
+
+   componentDidMount = async () => {
+    const poke = await getPokemon();
+    console.log(poke);
+    
+  }
 
   render() {
     return (
