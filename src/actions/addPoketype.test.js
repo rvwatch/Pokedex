@@ -1,6 +1,6 @@
 import { addPokeTypes } from './index';
 
-describe.only('Actions.addPoketype', () => {
+describe('Actions.addPoketype', () => {
   it('should create an action to add PokeTypes', () => {
     const pokeTypes = [{name: 'fighting'}];
     const expected = {
