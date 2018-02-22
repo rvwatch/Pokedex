@@ -11,8 +11,18 @@ export const getPokemon = async () => {
   }
 };
 
-export const getPokeDetails = async idsArray => {
-    console.log('in the deets');
+export const getPokeDetails = async ids => {
+    console.log(ids);
+    const details = ids.map( async id => {
+        const data = await fetch(`http://localhost:3001/pokemon/${id}`, {
+        method: 'GET'
+        });
+
+    const results = await data.json();
+    return results;
+    });
+
+    return await Promise.all(details);
     // const detailsArray = idsArray.map(poke => {
     // try {
     //     const data = await fetch(`http://localhost:3001/pokemon/${test}`, {
