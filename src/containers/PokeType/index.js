@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import { func, array } from 'prop-types';
 import { connect } from 'react-redux';
 import { addPokeTypes } from '../../actions';
 import { getPokemon } from '../../apiCalls/apiCall';
@@ -36,7 +36,7 @@ class PokeTypes extends Component {
 }
 
 PokeTypes.propTypes = {
-  poke: shape({ poke: string }),
+  pokeType: array,
   addPokeTypes: func.isRequired
 };
 

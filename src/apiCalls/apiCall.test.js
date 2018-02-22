@@ -2,10 +2,8 @@ import { getPokemon } from './apiCall';
 
 describe('getPokem fetch', () => {
   let mockPokes;
-  let expectedURL;
 
   beforeEach(() => {
-    expectedURL = 'http://pokestuff';
 
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
@@ -23,9 +21,6 @@ describe('getPokem fetch', () => {
       {name: 'normal'},
       {name: 'flying'}
     ];
-
-
-
   });
 
   it('should call the fetch', () => {
@@ -34,7 +29,7 @@ describe('getPokem fetch', () => {
     expect(window.fetch).toHaveBeenCalled();
   });
 
-  it('should return an array if the status is ok', () => {
+  it('should return an array of Pokes if the status is ok', () => {
     expect(getPokemon()).resolves.toEqual({results: mockPokes});
   });
 
@@ -42,11 +37,11 @@ describe('getPokem fetch', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       Promise.reject({
         ok: false,
-        status: 404,
-        json: () => Promise.reject('ERROR!')
+        status: 404
       });
     });
-    const someththththdfjads;lfkja;lf TEESTTs!!!
+    const testError = await getPokemon();
+    expect(testError).toEqual('OMFG, you broke it!');
   });
 
 });
