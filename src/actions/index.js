@@ -3,7 +3,7 @@ export const addPokeTypes = (pokeTypes) => ({
     pokeTypes
 });
 
-export const addPokeDetails = (details) => ({ 
+export const addPokeDetails = (details) => ( { 
     type: 'POKE_DETAILS',
     details
 });
